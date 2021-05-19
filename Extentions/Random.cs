@@ -38,6 +38,11 @@ public static class RandomElement
     /// Selects a random element from a list.
     public static T RandomListElement<T>(this List<T> list)
     {
+        if(list.Count == 0)
+        {
+            return default;
+        }
+
         int randomIndex = UnityEngine.Random.Range(0, list.Count);
         return list[randomIndex];
     }
